@@ -17,8 +17,8 @@
         - if user.is_admin == false
           %td
             - if user.is_banned == true
-              = link_to t('unban'), unban_admin_user_path(user), method: :post
+              = link_to t('unban'), unban_admin_user_path(user), method: :post, class: "btn btn-success"
             - else
-              = link_to t('ban'), ban_admin_user_path(user), method: :post
+              = link_to t('ban'), ban_admin_user_path(user), method: :post, class: "btn btn-danger"
         - else
           %td

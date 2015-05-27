@@ -19,7 +19,7 @@
       - @receipt.comments.each do |comment|
         %tr
           %td= comment.user.username
-          %td= comment.body
+          %td= comment.message
           - if user_signed_in?
             - if current_user.is_admin?
               %td= link_to t('destroy'), receipt_comment_path(@receipt, comment), method: :delete, data: { confirm: "#{t('are_you_sure')}" }

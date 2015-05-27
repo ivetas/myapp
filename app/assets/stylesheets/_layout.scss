@@ -7,10 +7,14 @@ body {
 }
 
 .container {
-  max-width: 1680px;
-
-  h2.main {
-    margin-top: 0;
+  width: 100%;
+  .top {
+    h2 {
+      float: left;
+    }
+    .page-otpions {
+      float: right;
+    }
   }
 }
 
@@ -24,6 +28,20 @@ body {
   margin-top: 10px;
 }
 
+.col-lg-6 {
+  span {
+    display: block;
+  }
+}
+
 .banner {
   margin-top: 15px;
+}
+
+ul.nav.navbar-nav {
+  li {
+    a:hover {
+      background-color: #E8E8E8;
+    }
+  }
 }

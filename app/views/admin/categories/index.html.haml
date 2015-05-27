@@ -14,5 +14,5 @@
       - @categories.each do |category|
         %tr
           %td= category.name
-          %td= link_to t('edit'), edit_admin_category_path(category)
-          %td= link_to t('destroy'), admin_category_path(category), method: :delete, data: { confirm: t('are_you_sure') }
+          %td= link_to t('edit'), edit_admin_category_path(category), class: "btn btn-info"
+          %td= link_to t('destroy'), admin_category_path(category), method: :delete, class: "btn btn-danger", data: { confirm: t('are_you_sure') }

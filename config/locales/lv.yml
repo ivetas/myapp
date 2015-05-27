@@ -31,7 +31,7 @@ lv:
         remember_me: Atcerēties mani
       article:
         title: Virsraksts
-        text: Teksts
+        description: Apraksts
         published: Publicēt
       category:
         name: Nosaukums
@@ -85,7 +85,7 @@ lv:
     index:
       list_of_articles: Ziņas
       title: Virsraksts
-      text: Teksts
+      text: Apraksts
   categories:
     show:
       search: Meklēt recepti
@@ -159,7 +159,7 @@ lv:
       index:
         list_of_articles: Ziņu saraksts
         title: Virsraksts
-        text: Teksts
+        text: Apraksts
         published: Publicēts
         publication_date: Publicēšanas datums
         add_article: Pievienot ziņu

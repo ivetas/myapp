@@ -1,5 +1,8 @@
 .form-group {
-  padding: 40px;
+  textarea {
+    margin: 5px;
+    height: 100px;
+  }
   label.checkbox {
     input[type=checkbox] {
       width: auto;
@@ -7,21 +10,6 @@
       padding: 0;
       height: 20px;
       margin-left: 80px;
-    }
-
-    input[type=textarea] {
-      padding: 100px;
-      width: 400px;
-    }
-
-    .input.ckeditor {
-      & > div.cke {
-      float: left;
-      }
-    }
-
-    textarea {
-      height: 100px;
     }
 
     .hint {

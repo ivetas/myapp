@@ -8,13 +8,12 @@
         %li= message
 
   .form-group
-    .col-lg-12
-      = f.file_field :photo
+    .col-lg-10
       = f.input :title
       = f.input :components
       = f.input :description
-      .col-lg-6
-        = f.input :published, as: :boolean
+      = f.file_field :photo
+      = f.input :published, as: :boolean
 
   .form-group
     .col-lg-6

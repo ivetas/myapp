@@ -1,5 +1,5 @@
 .receipts
-  .content
+  .container
     .row
       %table
         %tr
@@ -31,6 +31,6 @@
                 %td= rating_for receipt, "vote", enable_half: true
                 - if signed_in?
                   - if current_user.is_admin
-                    %td= link_to t('destroy'), admin_receipt_path(receipt), method: :delete, data: { confirm: "#{t('are_you_sure')}" }
+                    %td= link_to t('destroy'), admin_receipt_path(receipt), method: :delete, class: "btn btn-danger", data: { confirm: "#{t('are_you_sure')}" }
   .box
     = will_paginate @receipts, renderer: BootstrapPagination::Rails

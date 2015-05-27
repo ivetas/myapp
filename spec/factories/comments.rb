@@ -1,3 +1,10 @@
+FactoryGirl.define do
+  factory :comment, class: Comment do
+    message "Izcila recepte! Paldies!"
+    user
+  end
+end
+
 # == Schema Information
 #
 # Table name: comments
@@ -9,10 +16,3 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
-
-FactoryGirl.define do
-  factory :comment, class: Comment do
-    body "Izcila recepte! Paldies!"
-    user
-  end
-end

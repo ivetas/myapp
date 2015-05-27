@@ -19,13 +19,13 @@ feature "Articles" do
     expect(page).to have_content I18n.t('admin.articles.new.new_article')
 
     fill_in Article.human_attribute_name(:title), with: "Ēd cik uziet"
-    fill_in Article.human_attribute_name(:text), with: "Jāēd 5 reizes dienā!"
+    fill_in Article.human_attribute_name(:description), with: "Jāēd 5 reizes dienā!"
 
     click_button I18n.t('save')
 
     expect(page).to have_content I18n.t('admin.articles.create.notice')
     expect(Article.last.title).to eq "Ēd cik uziet"
-    expect(Article.last.text).to eq "Jāēd 5 reizes dienā!"
+    expect(Article.last.description).to eq "Jāēd 5 reizes dienā!"
   end
 
   it "Admin can edit articles" do
@@ -35,12 +35,12 @@ feature "Articles" do
     expect(page).to have_content Article.human_attribute_name(:published)
 
     fill_in Article.human_attribute_name(:title), with: "Jauns saldējums"
-    fill_in Article.human_attribute_name(:text), with: "Vēl vairāk piena!"
+    fill_in Article.human_attribute_name(:description), with: "Vēl vairāk piena!"
     click_button I18n.t('save')
 
     expect(page).to have_content I18n.t('admin.articles.update.notice')
     expect(Article.last.title).to eq "Jauns saldējums"
-    expect(Article.last.text).to eq "Vēl vairāk piena!"
+    expect(Article.last.description).to eq "Vēl vairāk piena!"
   end
 
   it "Admin can delete articles" do

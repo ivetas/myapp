@@ -8,7 +8,7 @@
     = csrf_meta_tags
   %body{ id: "#{controller_name}_#{action_name}".dasherize }
     %header.navbar.navbar-default.navbar-fixed-top.bs-docs-nav{ role: "banner" }
-      .container-fluid
+      .container
         .navbar-header
           %button.navbar-toggle{ type: "button", data: {toggle:"collapse", target:".bs-navbar-collapse"}}
             %span.sr-only Toggle navigation
@@ -43,12 +43,12 @@
             = link_to_unless_current "Latviešu", locale: "lv"
             = link_to_unless_current "English", locale: "en"
 
-    .container-fluid
+    .container
       .row
         .col-md-12
           - if notice
             .alert.alert-success= notice
           - if alert
             .alert.alert-danger= alert
-      .row
-        = yield
+
+      = yield
