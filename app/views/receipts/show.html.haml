@@ -27,6 +27,6 @@
     - if user_signed_in?
       = form_for ([@receipt, @receipt.comments.build]) do |f|
         .field
-          = f.text_field :body
+          = f.text_field :message
         .actions
           = f.submit t('submit')

@@ -1,3 +1,8 @@
+class AverageCache < ActiveRecord::Base
+  belongs_to :rater, :class_name => "User"
+  belongs_to :rateable, :polymorphic => true
+end
+
 # == Schema Information
 #
 # Table name: average_caches
@@ -10,8 +15,3 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #
-
-class AverageCache < ActiveRecord::Base
-  belongs_to :rater, :class_name => "User"
-  belongs_to :rateable, :polymorphic => true
-end

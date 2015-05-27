@@ -19,7 +19,7 @@
         %tr
           %td= image_tag article.photo.url(:small)
           %td= article.title
-          %td= article.text
+          %td= article.description
           %td= article.published
           %td= article.published_at
           %td= link_to t('edit'), edit_admin_article_path(article)

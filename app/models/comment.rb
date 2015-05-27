@@ -12,7 +12,7 @@ end
 #  id         :integer          not null, primary key
 #  receipt_id :integer
 #  user_id    :integer
-#  body       :text
+#  message    :text
 #  created_at :datetime
 #  updated_at :datetime
 #

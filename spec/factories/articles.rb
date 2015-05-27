@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :article, class: Article do
     published true
-    text "Daudz ēdiens! Būs labi!"
+    description "Daudz ēdiens! Būs labi!"
     title "Nom Nom Nom"
   end
 end
@@ -12,7 +12,7 @@ end
 #
 #  id                 :integer          not null, primary key
 #  title              :string
-#  text               :text
+#  description        :text
 #  published          :boolean          default(FALSE)
 #  published_at       :datetime
 #  created_at         :datetime

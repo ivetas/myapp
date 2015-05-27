@@ -1,3 +1,7 @@
+class OverallAverage < ActiveRecord::Base
+  belongs_to :rateable, :polymorphic => true
+end
+
 # == Schema Information
 #
 # Table name: overall_averages
@@ -9,8 +13,3 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #
-
-class OverallAverage < ActiveRecord::Base
-  belongs_to :rateable, :polymorphic => true
-end
-

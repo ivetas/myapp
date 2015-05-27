@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150512140559) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.text     "text"
+    t.text     "description"
     t.boolean  "published",          default: false
     t.datetime "published_at"
     t.datetime "created_at"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150512140559) do
   create_table "comments", force: :cascade do |t|
     t.integer  "receipt_id"
     t.integer  "user_id"
-    t.text     "body"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

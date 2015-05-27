@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   before_save :set_articles_publishing_time
 
-  validates :title, :text, presence: true
+  validates :title, :description, presence: true
 
   scope :published, -> { where(published: true) }
 
@@ -23,7 +23,7 @@ end
 #
 #  id                 :integer          not null, primary key
 #  title              :string
-#  text               :text
+#  description        :text
 #  published          :boolean          default(FALSE)
 #  published_at       :datetime
 #  created_at         :datetime
