@@ -1,0 +1,193 @@
+lv:
+  show: Skatīt
+  edit: Labot
+  destroy: Dzēst
+  are_you_sure: Jūs esiet pārliecināts?
+  forgot_password: Aizmirsi savu paroli?
+  save: Saglabāt
+  register: Reģistrēties
+  signin: Pieslēgties
+  back: Atpakaļ
+  error: kļūda
+  exit: Iziet
+  save: Saglabāt
+  ban: Nobanot
+  unban: Atbanot
+  submit: Nosūtīt
+  search: Meklēt
+  activerecord:
+    attributes:
+      receipt:
+        title: Nosaukums
+        description: Apraksts
+        components: Sastāvdaļas
+        published: Publicēt
+        category_id: Kategorija
+      user:
+        email: E-pasts
+        username: Lietotājvārds
+        password: Parole
+        password_confirmation: Apstiprināt paroli
+        remember_me: Atcerēties mani
+      article:
+        title: Virsraksts
+        text: Teksts
+        published: Publicēt
+      category:
+        name: Nosaukums
+
+  layouts:
+    home:
+      home: Sākums
+      receipts: Receptes
+      my_receipts: Manas receptes
+      articles: Ziņas
+      admin_menu: Administrēšana
+      article_edditing: Ziņu rediģēšana
+      users: Lietotāji
+      categories: Kategorijas
+  receipts:
+    index:
+      add_receipt: Pievienot recepti
+      title: Nosaukums
+      description: Apraksts
+      main_title: Recepšu saraksts
+      vote: Vērtējums
+      categories: Kategorijas
+      search: Meklēt recepti
+    show:
+      components: Sastāvdaļas
+      description: Pagatavošana
+      vote: Vērtējums
+      comments: Komentāri
+    new:
+      new_receipt: Jauna recepte
+    edit:
+      edit_receipt: Labot recepti
+    create:
+      notice: Recepte ir veiksmīgi izveidota
+    update:
+      notice: Recepte ir veiksmīgi labota
+    destroy:
+      notice: Recepte ir veiksmīgi izdzēsta
+  my_receipts:
+    index:
+      add_receipt: Pievienot recepti
+      title: Nosaukums
+      description: Apraksts
+      main_title: Manu recepšu saraksts
+      vote: Vērtējums
+    new:
+      new_receipt: Jauna recepte
+    edit:
+      edit_receipt: Labot recepti
+  articles:
+    index:
+      list_of_articles: Ziņas
+      title: Virsraksts
+      text: Teksts
+  categories:
+    show:
+      search: Meklēt recepti
+      categories: Kategorijas
+  comments:
+    create:
+      notice: Komentārs veiksmīgi izveidots
+      alert: Komentāru neizdevās izveidot
+  errors:
+    messages:
+      not_saved: Kļūda
+  home:
+    index:
+      top_receipts: Recepšu TOP 5
+
+  devise:
+    failure:
+      already_authenticated: "Jūs jau esat ienācis"
+      invalid: "Nepareizs epasts vai parole"
+      invalid_token: "Neapareizs autentifikācijas tokens"
+      not_found_in_database: "Nepareizs epasts vai parole"
+      timeout: "Tava sesija ir beigusies. Ienāc vēlreiz, lai turpinātu."
+      unauthenticated: "Tev ir jāienāk, lai turpinātu"
+    mailer:
+      reset_password_instructions:
+        subject: "Paroles atjaunošanas instrukcijas"
+    passwords:
+      send_instructions: "Pāris minūšu laikā Jūs saņemsiet instrukciju savā epastā kā atjaunot paroli."
+      send_paranoid_instructions: "Ja datubāzē eksistē šāda epasta adrese, tad uz to tiks nosūtīta saite paroles atjaunošanai."
+      updated: "Jūsu parole ir veiksmīgi nomainīta. Jūs esat ienācis."
+      updated_not_active: "Tava parole tikai veiksmīgi nomainīta."
+      new:
+        forgot_password: Aizmirsi savu paroli?
+        send_instructions: Atjaunot paroli
+      edit:
+        change_your_password: Nomaini savu paroli
+        new_password: Jaunā parole
+        confirm_new_password: Jaunā parole atkārtoti
+        change_password: Mainīt paroli
+    sessions:
+      signed_in: ""
+      signed_out: ""
+      new:
+        new_user_hint: "Tev vēl nav savs lietotāja konts?"
+        register: "Reģistrējies!"
+        forgot_password: "Aizmirsi paroli?"
+        log_in: Pieslēgties
+    registrations:
+      new:
+        sign_up: Reģistrēties
+        signed_up: ""
+      user:
+        signed_up: ""
+
+  admin:
+    users:
+      index:
+        users: Lietotāji
+        email: E-pasts
+        username: Lietotājvārds
+        is_admin: Admins
+        is_banned: Ban
+        last_sign_in_at: Pēdējo reizi ienācis
+      ban:
+        notice: 'Lietotājs izbanots'
+        alert: 'Lietotāju neizdevās izbanot'
+      unban:
+        notice: 'Lietotāja bans ir atcelts'
+        alert: 'Lietotāja banu neizdevās atcelt'
+    articles:
+      index:
+        list_of_articles: Ziņu saraksts
+        title: Virsraksts
+        text: Teksts
+        published: Publicēts
+        publication_date: Publicēšanas datums
+        add_article: Pievienot ziņu
+      new:
+        new_article: Jauna ziņa
+      edit:
+        edit_article: Labot ziņu
+      create:
+        notice: Ziņa ir veiksmīgi izveidota
+      update:
+        notice: Ziņa ir veiksmīgi labota
+      destroy:
+        notice: Ziņa ir veiksmīgi izdzēsta
+    categories:
+      index:
+        list_of_categories: Kategoriju saraksts
+        name: Nosaukums
+        add_category: Pievienot kategoriju
+      new:
+        new_category: Jauna kategorija
+      edit:
+        edit_category: Labot kategoriju
+      create:
+        notice: Kategorija ir veiksmīgi izveidota
+      update:
+        notice: Kategorija ir veiksmīgi labota
+      destroy:
+        notice: Kategorija ir veiksmīgi izdzēsta
+    receipts:
+      destroy:
+        notice: Recepte ir veiksmīgi izdzēsta

@@ -1,0 +1,24 @@
+.articles
+  %h2= "#{t('.users')} (#{User.count})"
+
+  %table.table.table-striped
+    %tr
+      %th= t('.email')
+      %th= t('.username')
+      %th= t('.is_admin')
+      %th= t('.last_sign_in_at')
+      %th= t('.is_banned')
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.username
+        %td= user.is_admin
+        %td= l(user.last_sign_in_at, format: :short) if user.last_sign_in_at
+        - if user.is_admin == false
+          %td
+            - if user.is_banned == true
+              = link_to t('unban'), unban_admin_user_path(user), method: :post
+            - else
+              = link_to t('ban'), ban_admin_user_path(user), method: :post
+        - else
+          %td

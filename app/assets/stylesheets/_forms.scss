@@ -1,0 +1,35 @@
+.form-group {
+  padding: 40px;
+  label.checkbox {
+    input[type=checkbox] {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      height: 20px;
+      margin-left: 80px;
+    }
+
+    input[type=textarea] {
+      padding: 100px;
+      width: 400px;
+    }
+
+    .input.ckeditor {
+      & > div.cke {
+      float: left;
+      }
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .hint {
+      color: gray;
+    }
+  }
+
+  .actions {
+    padding-left: 220px;
+  }
+}

@@ -1,0 +1,17 @@
+.articles
+  %h1= t('.list_of_articles')
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+        %th= t('.title')
+        %th= t('.text')
+
+    %tbody
+      - @articles.each do |article|
+        - if article.published
+          %tr
+            %td= image_tag article.photo.url(:small)
+            %td= article.title
+            %td= article.text

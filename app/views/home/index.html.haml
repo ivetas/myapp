@@ -1,0 +1,15 @@
+%h2= t('.top_receipts')
+
+%table
+  %tr
+    %th
+    %th
+    %th
+    %th
+  - if @rate.any?
+    - @rate.each do |rate|
+      %tr
+        %td= link_to (image_tag rate.cacheable.photo.url(:small)), receipt_path(rate.cacheable)
+        %td= rate.cacheable.title
+        %td= rating_for rate.cacheable, "vote", enable_half: true
+        %td= rate.qty

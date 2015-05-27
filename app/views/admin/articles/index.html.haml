@@ -1,0 +1,26 @@
+.articles
+  %h1= t('.list_of_articles')
+  .page-options
+    = link_to t('.add_article'), new_admin_article_path, class: "btn btn-default"
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th
+        %th= t('.title')
+        %th= t('.text')
+        %th= t('.published')
+        %th= t('.publication_date')
+        %th
+        %th
+
+    %tbody
+      - @articles.each do |article|
+        %tr
+          %td= image_tag article.photo.url(:small)
+          %td= article.title
+          %td= article.text
+          %td= article.published
+          %td= article.published_at
+          %td= link_to t('edit'), edit_admin_article_path(article)
+          %td= link_to t('destroy'), admin_article_path(article), method: :delete, data: { confirm: t('are_you_sure') }

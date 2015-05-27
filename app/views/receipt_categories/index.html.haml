@@ -1,0 +1,19 @@
+%h1 Listing receipt_categories
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @receipt_categories.each do |receipt_category|
+      %tr
+        %td= link_to 'Show', receipt_category
+        %td= link_to 'Edit', edit_receipt_category_path(receipt_category)
+        %td= link_to 'Destroy', receipt_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Receipt category', new_receipt_category_path

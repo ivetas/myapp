@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 1680px;
+
+  h2.main {
+    margin-top: 0;
+  }
+}
+
+.page-options {
+  position: absolute;
+  top: 70px;
+  right: 25px;
+}
+
+.alert {
+  margin-top: 10px;
+}
+
+.banner {
+  margin-top: 15px;
+}

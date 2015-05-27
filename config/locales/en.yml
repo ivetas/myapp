@@ -1,23 +1,193 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  show: Show
+  edit: Edit
+  destroy: Delete
+  are_you_sure: Are you sure?
+  forgot_password: Forgot password?
+  save: Save
+  register: Register
+  signin: Sign in
+  back: Back
+  error: Error
+  exit: Exit
+  save: Save
+  ban: Ba
+  unban: Unban
+  submit: Send
+  search: Search
+  activerecord:
+    attributes:
+      receipt:
+        title: Title
+        description: Description
+        components: Components
+        published: Publish
+        category_id: Category
+      user:
+        email: E-mail
+        username: Username
+        password: Password
+        password_confirmation: Confirm password
+        remember_me: Remember me
+      article:
+        title: Title
+        text: Description
+        published: Publish
+      category:
+        name: Name
+
+  layouts:
+    home:
+      home: Home
+      receipts: Receipts
+      my_receipts: My receipts
+      articles: News
+      admin_menu: Administrating
+      article_edditing: News edditing
+      users: Users
+      categories: Categories
+  receipts:
+    index:
+      add_receipt: Add receipt
+      title: Title
+      description: Description
+      main_title: Receipt list
+      vote: Rating
+      categories: Categories
+      search: Search receipt
+    show:
+      components: Components
+      description: Description
+      vote: Rating
+      comments: Comments
+    new:
+      new_receipt: New receipt
+    edit:
+      edit_receipt: Edit receipt
+    create:
+      notice: Receipt has been successfully created
+    update:
+      notice: Receipt has been successfully updated
+    destroy:
+      notice: Receipt has been successfully deleted
+  my_receipts:
+    index:
+      add_receipt: Add receipt
+      title: Title
+      description: Description
+      main_title: My receipt list
+      vote: Rating
+    new:
+      new_receipt: New receipt
+    edit:
+      edit_receipt: Edit receipt
+  articles:
+    index:
+      list_of_articles: News
+      title: Title
+      text: Description
+  categories:
+    show:
+      search: Search receipt
+      categories: Categories
+  comments:
+    create:
+      notice: Comment has been successfully created
+      alert: Failed to create comment
+  errors:
+    messages:
+      not_saved: Error
+  home:
+    index:
+      top_receipts: Receipt TOP 5
+
+  devise:
+    failure:
+      already_authenticated: "Jūs jau esat ienācis"
+      invalid: "Nepareizs epasts vai parole"
+      invalid_token: "Neapareizs autentifikācijas tokens"
+      not_found_in_database: "Nepareizs epasts vai parole"
+      timeout: "Tava sesija ir beigusies. Ienāc vēlreiz, lai turpinātu."
+      unauthenticated: "Tev ir jāienāk, lai turpinātu"
+    mailer:
+      reset_password_instructions:
+        subject: "Paroles atjaunošanas instrukcijas"
+    passwords:
+      send_instructions: "Pāris minūšu laikā Jūs saņemsiet instrukciju savā epastā kā atjaunot paroli."
+      send_paranoid_instructions: "Ja datubāzē eksistē šāda epasta adrese, tad uz to tiks nosūtīta saite paroles atjaunošanai."
+      updated: "Jūsu parole ir veiksmīgi nomainīta. Jūs esat ienācis."
+      updated_not_active: "Tava parole tikai veiksmīgi nomainīta."
+      new:
+        forgot_password: Aizmirsi savu paroli?
+        send_instructions: Atjaunot paroli
+      edit:
+        change_your_password: Nomaini savu paroli
+        new_password: Jaunā parole
+        confirm_new_password: Jaunā parole atkārtoti
+        change_password: Mainīt paroli
+    sessions:
+      signed_in: ""
+      signed_out: ""
+      new:
+        new_user_hint: "Tev vēl nav savs lietotāja konts?"
+        register: "Reģistrējies!"
+        forgot_password: "Aizmirsi paroli?"
+        log_in: Pieslēgties
+    registrations:
+      new:
+        sign_up: Reģistrēties
+        signed_up: ""
+      user:
+        signed_up: ""
+
+  admin:
+    users:
+      index:
+        users: User
+        email: E-mail
+        username: Username
+        is_admin: Admin
+        is_banned: Ban
+        last_sign_in_at: Last sign in
+      ban:
+        notice: User has been banned
+        alert: Failed to ban user
+      unban:
+        notice: User has been unbanned
+        alert: Failed to unban user
+    articles:
+      index:
+        list_of_articles: News list
+        title: Title
+        text: Description
+        published: Published
+        publication_date: Published at
+        add_article: Add article
+      new:
+        new_article: New article
+      edit:
+        edit_article: Edit article
+      create:
+        notice: Article has been successfully created
+      update:
+        notice: Article has been successfully updated
+      destroy:
+        notice: Article has been successfully deleted
+    categories:
+      index:
+        list_of_categories: Category list
+        name: Name
+        add_category: Add category
+      new:
+        new_category: New category
+      edit:
+        edit_category: Edit category
+      create:
+        notice: Category has been successfully created
+      update:
+        notice: Category has been successfully updated
+      destroy:
+        notice: Category has been successfully deleted
+    receipts:
+      destroy:
+        notice: Receipt has been successfully deleted

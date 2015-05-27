@@ -1,0 +1,32 @@
+.receipts
+  %h2= @receipt.title
+
+  %table
+    %tr
+      %th
+      %th= t('.components')
+      %th= t('.description')
+      %th= t('.vote')
+    %tr
+      %td= image_tag @receipt.photo.url(:small)
+      %td= @receipt.components
+      %td= @receipt.description
+      %td= rating_for @receipt, "vote", enable_half: true
+
+  .comments
+    %h4= "#{t('.comments')} #{@receipt.comments.count}"
+    %table
+      - @receipt.comments.each do |comment|
+        %tr
+          %td= comment.user.username
+          %td= comment.body
+          - if user_signed_in?
+            - if current_user.is_admin?
+              %td= link_to t('destroy'), receipt_comment_path(@receipt, comment), method: :delete, data: { confirm: "#{t('are_you_sure')}" }
+
+    - if user_signed_in?
+      = form_for ([@receipt, @receipt.comments.build]) do |f|
+        .field
+          = f.text_field :body
+        .actions
+          = f.submit t('submit')
