@@ -103,39 +103,39 @@ en:
 
   devise:
     failure:
-      already_authenticated: "Jūs jau esat ienācis"
-      invalid: "Nepareizs epasts vai parole"
-      invalid_token: "Neapareizs autentifikācijas tokens"
-      not_found_in_database: "Nepareizs epasts vai parole"
-      timeout: "Tava sesija ir beigusies. Ienāc vēlreiz, lai turpinātu."
-      unauthenticated: "Tev ir jāienāk, lai turpinātu"
+      already_authenticated: "You are already signed in"
+      invalid: "Wrong email or password"
+      invalid_token: "Invalid token"
+      not_found_in_database: "Wrong email or password"
+      timeout: "Your session has ended."
+      unauthenticated: "You must sign in to continue"
     mailer:
       reset_password_instructions:
-        subject: "Paroles atjaunošanas instrukcijas"
+        subject: "Instructions for new password"
     passwords:
-      send_instructions: "Pāris minūšu laikā Jūs saņemsiet instrukciju savā epastā kā atjaunot paroli."
-      send_paranoid_instructions: "Ja datubāzē eksistē šāda epasta adrese, tad uz to tiks nosūtīta saite paroles atjaunošanai."
-      updated: "Jūsu parole ir veiksmīgi nomainīta. Jūs esat ienācis."
-      updated_not_active: "Tava parole tikai veiksmīgi nomainīta."
+      send_instructions: "Shortly you will get instructions in your email on how to renew your password."
+      send_paranoid_instructions: "If this e-mail adress exists, then link to renew password will be sent to it."
+      updated: "Your password has been successfully changed. You are signed in."
+      updated_not_active: "Your password has been successfully changed."
       new:
-        forgot_password: Aizmirsi savu paroli?
-        send_instructions: Atjaunot paroli
+        forgot_password: Forgot your password?
+        send_instructions: Renew password
       edit:
-        change_your_password: Nomaini savu paroli
-        new_password: Jaunā parole
-        confirm_new_password: Jaunā parole atkārtoti
-        change_password: Mainīt paroli
+        change_your_password: Change your password
+        new_password: New password
+        confirm_new_password: Confirm new password
+        change_password: Change password
     sessions:
       signed_in: ""
       signed_out: ""
       new:
-        new_user_hint: "Tev vēl nav savs lietotāja konts?"
-        register: "Reģistrējies!"
-        forgot_password: "Aizmirsi paroli?"
-        log_in: Pieslēgties
+        new_user_hint: "Don't have you your own account?"
+        register: "Register!"
+        forgot_password: "Frgot password?"
+        log_in: Sign in
     registrations:
       new:
-        sign_up: Reģistrēties
+        sign_up: Register
         signed_up: ""
       user:
         signed_up: ""
