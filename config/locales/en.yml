@@ -95,6 +95,8 @@ en:
     create:
       notice: Comment has been successfully created
       alert: Failed to create comment
+    destroy:
+      alert: Comment has been successfully deleted
   errors:
     messages:
       not_saved: Error

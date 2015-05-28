@@ -1,0 +1,43 @@
+ul.nav.navbar-nav {
+  li {
+    a:hover {
+      border-radius: 25px;
+      background-color: #FF3399;
+    }
+  }
+  p {
+    color: white;
+  }
+}
+
+li.dropdown.open {
+  border-radius: 25px;
+  background-color: #FF3399;
+  a {
+    background-color: #FF3399;
+  }
+  .dropdown-toggle {
+    border-radius: 25px;
+  }
+  ul.dropdown-menu {
+    border-radius: 25px;
+    background-color: #FF99CC;
+    padding: 6px;
+    li {
+      a {
+        border-radius: 25px;
+        background-color: #FF99CC;
+      }
+      a:hover {
+        border-radius: 25px;
+        background-color: #FF3399;
+        color: white;
+      }
+    }
+  }
+  ul.dropdown-menu.language-selection {
+    text-align: center;
+    min-width: 0;
+    width: 100px;
+  }
+}

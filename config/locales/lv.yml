@@ -98,6 +98,8 @@ lv:
     create:
       notice: Komentārs veiksmīgi izveidots
       alert: Komentāru neizdevās izveidot
+    destroy:
+      alert: Komentārs veiksmigi izdzēsts
   errors:
     messages:
       not_saved: Kļūda
@@ -195,3 +197,7 @@ lv:
     receipts:
       destroy:
         notice: Recepte ir veiksmīgi izdzēsta
+
+  will_paginate:
+    next_label: Nākamā lapa
+    previous_label: Iepriekšējā lapa

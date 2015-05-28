@@ -1,19 +1,17 @@
-.row
-  %table
-    %tr
-      %td= t('.categories')
-      - @categories.each do |category|
-        %td= link_to category.name, category_path(category)
+.side
+  %h3= t('.categories')
+  - @categories.each do |category|
+    %p= link_to category.name, category_path(category)
 
-  = form_tag receipts_path, method: "get", class: "navbar-form", id: "search-form"   do
-    .input-append
-      = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
-      = submit_tag t('search'), :name => nil
-
-.row
+.main
   - if @receipts.any?
-    %h2= t('.main_title')
-    %table.table.table-striped  
+    .main-top
+      %h2= t('.main_title')
+      = form_tag receipts_path, method: "get", class: "navbar-form", id: "search-form"   do
+        .input-append
+          = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
+          = submit_tag t('search'), :name => nil
+    %table.table.table-striped
       %tr
         %th
         %th= t('.title')
@@ -30,5 +28,5 @@
             - if signed_in?
               - if current_user.is_admin
                 %td= link_to t('destroy'), admin_receipt_path(receipt), method: :delete, class: "btn btn-danger", data: { confirm: "#{t('are_you_sure')}" }
-.box
-= will_paginate @receipts, renderer: BootstrapPagination::Rails
+  .box
+    = will_paginate @receipts, renderer: BootstrapPagination::Rails

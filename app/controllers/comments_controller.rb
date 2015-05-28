@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @receipt = Receipt.find(params[:receipt_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-      redirect_to receipt_path(@receipt), notice: t('.notice')
+      redirect_to receipt_path(@receipt), alert: t('.alert')
   end
 
   private
