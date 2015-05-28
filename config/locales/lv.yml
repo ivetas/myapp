@@ -90,6 +90,9 @@ lv:
     show:
       search: Meklēt recepti
       categories: Kategorijas
+      no_receipts: Netika atrasta neviena recepte
+      title: Nosaukums
+      vote: Vērtējums
   comments:
     create:
       notice: Komentārs veiksmīgi izveidots

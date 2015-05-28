@@ -1,5 +1,5 @@
 .receipts
-  .content
+  .container
     .row
       %table
         %tr
@@ -10,23 +10,28 @@
       = form_tag category_path(@category), method: "get", class: "navbar-form", id: "search-form"   do
         .input-append
           = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
-          = submit_tag "Search", :name => nil
+          = submit_tag t('search'), :name => nil
 
     .row
       %h2= @category.name
-      %table.table.table-striped
-        %tr
-          %th
-          %th= t('.title')
-          %th= t('.vote')
-          %th
-        - if @receipts_category.any?
-          - @receipts_category.each do |receipts_category|
-            %tr
-              %td= link_to (image_tag receipts_category.photo.url(:small)), receipt_path(receipts_category)
-              %td= receipts_category.title
-              %td= rating_for receipts_category, "vote", enable_half: true
-              %td= link_to t("show"), receipt_path(receipts_category)
+      - if @receipts_category.any?
+        %table.table.table-striped
+          %tr
+            %th
+            %th= t('.title')
+            %th= t('.vote')
+            %th
+            - @receipts_category.each do |receipts_category|
+              %tr
+                %td= link_to (image_tag receipts_category.photo.url(:small)), receipt_path(receipts_category)
+                %td= receipts_category.title
+                %td= rating_for receipts_category, "vote", enable_half: true
+                %td= link_to t("show"), receipt_path(receipts_category)
+      - else
+        %hr
+        %h3= t('.no_receipts')
+        %br
+
   .box
     = will_paginate @receipts_category, renderer: BootstrapPagination::Rails
 

@@ -27,4 +27,14 @@ feature "Search" do
 
     expect(page).to have_content receipt.title
   end
+
+  it "All users can search receipts in specific category" do
+    click_link category.name
+
+    fill_in "search", with: "karote"
+
+    click_button I18n.t('search')
+
+    expect(page).to have_content I18n.t('categories.show.no_receipts')
+  end
 end

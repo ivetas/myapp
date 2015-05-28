@@ -90,6 +90,7 @@ en:
     show:
       search: Search receipt
       categories: Categories
+      no_receipts: Couldn't find any receipt
   comments:
     create:
       notice: Comment has been successfully created
