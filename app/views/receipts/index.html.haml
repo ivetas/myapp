@@ -1,36 +1,34 @@
-.receipts
-  .container
-    .row
-      %table
-        %tr
-          %td= t('.categories')
-          - @categories.each do |category|
-            %td= link_to category.name, category_path(category)
+.row
+  %table
+    %tr
+      %td= t('.categories')
+      - @categories.each do |category|
+        %td= link_to category.name, category_path(category)
 
-      = form_tag receipts_path, method: "get", class: "navbar-form", id: "search-form"   do
-        .input-append
-          = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
-          = submit_tag t('search'), :name => nil
+  = form_tag receipts_path, method: "get", class: "navbar-form", id: "search-form"   do
+    .input-append
+      = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
+      = submit_tag t('search'), :name => nil
 
-    .row
-      - if @receipts.any?
-        %h2= t('.main_title')
-        %table.table.table-striped
-          %tr
+.row
+  - if @receipts.any?
+    %h2= t('.main_title')
+    %table.table.table-striped  
+      %tr
+        %th
+        %th= t('.title')
+        %th= t('.vote')
+        - if signed_in?
+          - if current_user.is_admin
             %th
-            %th= t('.title')
-            %th= t('.vote')
+      - @receipts.each do |receipt|
+        -if receipt.published
+          %tr
+            %td= link_to (image_tag receipt.photo.url(:small)), receipt_path(receipt)
+            %td= receipt.title
+            %td= rating_for receipt, "vote", enable_half: true
             - if signed_in?
               - if current_user.is_admin
-                %th
-          - @receipts.each do |receipt|
-            -if receipt.published
-              %tr
-                %td= link_to (image_tag receipt.photo.url(:small)), receipt_path(receipt)
-                %td= receipt.title
-                %td= rating_for receipt, "vote", enable_half: true
-                - if signed_in?
-                  - if current_user.is_admin
-                    %td= link_to t('destroy'), admin_receipt_path(receipt), method: :delete, class: "btn btn-danger", data: { confirm: "#{t('are_you_sure')}" }
-  .box
-    = will_paginate @receipts, renderer: BootstrapPagination::Rails
+                %td= link_to t('destroy'), admin_receipt_path(receipt), method: :delete, class: "btn btn-danger", data: { confirm: "#{t('are_you_sure')}" }
+.box
+= will_paginate @receipts, renderer: BootstrapPagination::Rails

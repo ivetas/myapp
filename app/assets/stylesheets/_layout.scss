@@ -2,11 +2,17 @@ html, body {
   height: 100%;
 }
 
-body {
-  padding-top: 50px;
-}
-
-.container {
+.wrapper {
+  position: relative;
+  width: 1025px;
+  margin: 0 auto;
+  .header {
+    width: 995px;
+    position: relative;
+  }
+  .content {
+    width: 995px;
+  }
   .top {
     h2 {
       float: left;
@@ -31,10 +37,6 @@ body {
   span {
     display: block;
   }
-}
-
-.banner {
-  margin-top: 15px;
 }
 
 ul.nav.navbar-nav {

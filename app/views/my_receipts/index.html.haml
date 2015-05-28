@@ -1,29 +1,27 @@
-.receipts
-  .container
-    - if user_signed_in?
-      .row
-        .top
-          %h2= t('.main_title')
-          .page-options
-            = link_to t('.add_receipt'), new_receipt_path, class: "btn btn-default"
-      .row
-        %table.table.table-striped
-          %tr
-            %th
-            %th= t('.title')
-            %th= t('.vote')
-            %th
-            %th
-          - @my_receipts.each do |receipt|
-            %tr
-              %td= link_to (image_tag receipt.photo.url(:small)), receipt_path(receipt)
-              %td= receipt.title
-              %td= rating_for receipt, "vote", enable_half: true
-              %td= link_to t('edit'), edit_receipt_path(receipt), class: "btn btn-info"
-              %td= link_to t('destroy'), receipt_path(receipt), method: :delete, class: "btn btn-danger", data: { confirm: "#{t('are_you_sure')}" }
-        .box
-          = will_paginate @my_receipts, renderer: BootstrapPagination::Rails
+- if user_signed_in?
+  .row
+    .top
+      %h2= t('.main_title')
+      .page-options
+        = link_to t('.add_receipt'), new_receipt_path, class: "btn btn-default"
+  .row
+    %table.table.table-striped
+      %tr
+        %th
+        %th= t('.title')
+        %th= t('.vote')
+        %th
+        %th
+      - @my_receipts.each do |receipt|
+        %tr
+          %td= link_to (image_tag receipt.photo.url(:small)), receipt_path(receipt)
+          %td= receipt.title
+          %td= rating_for receipt, "vote", enable_half: true
+          %td= link_to t('edit'), edit_receipt_path(receipt), class: "btn btn-info"
+          %td= link_to t('destroy'), receipt_path(receipt), method: :delete, class: "btn btn-danger", data: { confirm: "#{t('are_you_sure')}" }
+    .box
+      = will_paginate @my_receipts, renderer: BootstrapPagination::Rails
 
-    - else
-      .row
-        %h2.main= "You must log in"
+- else
+  .row
+    %h2.main= "You must log in"

@@ -46,6 +46,7 @@ lv:
       article_edditing: Ziņu rediģēšana
       users: Lietotāji
       categories: Kategorijas
+      language: Valoda
   receipts:
     index:
       add_receipt: Pievienot recepti
