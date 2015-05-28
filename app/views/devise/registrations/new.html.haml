@@ -1,25 +1,15 @@
 %h2= t('.sign_up')
 
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
 
-  %p.field
-    = f.label :email
-    = f.email_field :email, autofocus: true
+  .form-group
+    .col-lg-8
+      = f.input :email
+      = f.input :username
+      = f.input :password
+      = f.input :password_confirmation
 
-  %p.field
-    = f.label :username
-    = f.text_field :username, autofocus: true
-
-  %p.field
-    = f.label :password
-    = f.password_field :password
-
-  %p.field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-
-  .controls
-    = f.submit t('.sign_up'), :class => "submit"
-
-= render "devise/shared/links"
+  .form-group
+    .col-lg-12
+      = f.submit t('.sign_up'), :class => "submit"

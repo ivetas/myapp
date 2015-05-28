@@ -1,0 +1,12 @@
+%h2= t('.forgot_password')
+
+= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = devise_error_messages!
+
+  .form-group
+    .col-lg-8
+      = f.input :email
+
+  .form-group
+    .col-lg-12
+      = f.submit t('.send_instructions')
