@@ -2,7 +2,7 @@ class Admin::ArticlesController < Admin::AdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = ::Article.order(published_at: :desc).all
+    @articles = ::Article.page(params[:page]).order(published_at: :desc)
   end
 
   def show

@@ -8,13 +8,14 @@
         %th= t('.email')
         %th= t('.username')
         %th= t('.is_admin')
-        %th= t('.is_banned')
         %th= t('.last_sign_in_at')
+        %th= t('.state')
+
       - @users.each do |user|
         %tr
           %td= user.email
           %td= user.username
-          %td= user.is_admin
+          %td= boolean_value(user.is_admin)
           %td= l(user.last_sign_in_at, format: :short) if user.last_sign_in_at
           - if user.is_admin == false
             %td

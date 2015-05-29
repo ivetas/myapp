@@ -5,4 +5,12 @@ module ApplicationHelper
       ['English',  'en']
     ]
   end
+
+  def boolean_value(value)
+    if value
+      'Y'
+    else
+      'N'
+    end
+  end
 end

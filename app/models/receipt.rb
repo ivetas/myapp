@@ -11,7 +11,7 @@ class Receipt < ActiveRecord::Base
 
   self.per_page = 5
 
-  has_attached_file :photo, :styles => { :small => "150x150>" },
+  has_attached_file :photo, :styles => { :small => "150x150>", :medium => "300x300>" },
                     :url  => "/assets/receipts/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/receipts/:id/:style/:basename.:extension"
 
@@ -21,7 +21,6 @@ class Receipt < ActiveRecord::Base
   ratyrate_rateable "vote"
 
   def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
     where("title ilike ?", "%#{query}%")
   end
   scope :published, -> { where(published: true) }

@@ -11,8 +11,8 @@ lv:
   error: Kļūda
   exit: Iziet
   save: Saglabāt
-  ban: Nobanot
-  unban: Atbanot
+  ban: Bloķēt
+  unban: Atbloķēt
   submit: Nosūtīt
   search: Meklēt
   activerecord:
@@ -63,6 +63,7 @@ lv:
       description: Pagatavošana
       vote: Vērtējums
       comments: Komentāri
+      author: Autors
     new:
       new_receipt: Jauna recepte
     edit:
@@ -158,8 +159,8 @@ lv:
         users: Lietotāji
         email: E-pasts
         username: Lietotājvārds
-        is_admin: Admins
-        is_banned: Ban
+        is_admin: Administrators
+        state: Statuss
         last_sign_in_at: Pēdējo reizi ienācis
       ban:
         notice: 'Lietotājs izbanots'

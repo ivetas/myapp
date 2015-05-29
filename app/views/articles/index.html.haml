@@ -1,10 +1,13 @@
 .white-font
-  %h2= t('.list_of_articles')
+  %h2.middle= t('.list_of_articles')
 
   %table.full-list
     - @articles.each do |article|
-      - if article.published
-        %tr
-          %td= image_tag article.photo.url(:small)
-          %td= article.title
-          %td= article.description
+      %tr
+        %td
+          %h4= article.title
+          %p= image_tag article.photo.url(:small)
+        %td= article.description
+
+  .box
+    = will_paginate @articles, renderer: BootstrapPagination::Rails

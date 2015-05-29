@@ -11,7 +11,7 @@ en:
   error: Error
   exit: Exit
   save: Save
-  ban: Ba
+  ban: Ban
   unban: Unban
   submit: Send
   search: Search
@@ -62,6 +62,7 @@ en:
       description: Description
       vote: Rating
       comments: Comments
+      author: Author
     new:
       new_receipt: New receipt
     edit:
@@ -156,7 +157,7 @@ en:
         email: E-mail
         username: Username
         is_admin: Admin
-        is_banned: Ban
+        state: State
         last_sign_in_at: Last sign in
       ban:
         notice: User has been banned
