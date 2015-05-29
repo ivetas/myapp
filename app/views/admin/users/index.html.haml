@@ -1,23 +1,29 @@
-%h2= "#{t('.users')} (#{User.count})"
+.white-font
+  .my-receipts
+    .top-options
+      %h2= "#{t('.users')} (#{User.count})"
 
-%table.table.table-striped
-  %tr
-    %th= t('.email')
-    %th= t('.username')
-    %th= t('.is_admin')
-    %th= t('.last_sign_in_at')
-    %th= t('.is_banned')
-  - @users.each do |user|
-    %tr
-      %td= user.email
-      %td= user.username
-      %td= user.is_admin
-      %td= l(user.last_sign_in_at, format: :short) if user.last_sign_in_at
-      - if user.is_admin == false
-        %td
-          - if user.is_banned == true
-            = link_to t('unban'), unban_admin_user_path(user), method: :post, class: "btn btn-success"
+    %table.element-list
+      %tr
+        %th= t('.email')
+        %th= t('.username')
+        %th= t('.is_admin')
+        %th= t('.is_banned')
+        %th= t('.last_sign_in_at')
+      - @users.each do |user|
+        %tr
+          %td= user.email
+          %td= user.username
+          %td= user.is_admin
+          %td= l(user.last_sign_in_at, format: :short) if user.last_sign_in_at
+          - if user.is_admin == false
+            %td
+              - if user.is_banned == true
+                = link_to t('unban'), unban_admin_user_path(user), method: :post, class: "btn btn-success"
+              - else
+                = link_to t('ban'), ban_admin_user_path(user), method: :post, class: "btn btn-danger"
           - else
-            = link_to t('ban'), ban_admin_user_path(user), method: :post, class: "btn btn-danger"
-      - else
-        %td
+            %td
+
+  .box
+    = will_paginate @users, renderer: BootstrapPagination::Rails

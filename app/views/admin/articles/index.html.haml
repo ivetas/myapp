@@ -1,19 +1,10 @@
-%h2= t('.list_of_articles')
-.page-options
-  = link_to t('.add_article'), new_admin_article_path, class: "btn btn-default"
+.white-font
+  .all-categories
+    .top-options
+      %h2= t('.list_of_articles')
+      = link_to t('.add_article'), new_admin_article_path, class: "btn btn-default"
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-      %th= t('.title')
-      %th= t('.text')
-      %th= t('.published')
-      %th= t('.publication_date')
-      %th
-      %th
-
-  %tbody
+  %table.full-list
     - @articles.each do |article|
       %tr
         %td= image_tag article.photo.url(:small)

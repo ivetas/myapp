@@ -5,9 +5,9 @@ class ReceiptsController < ApplicationController
   def index
     @categories = Category.all
     if params[:search]
-      @receipts = Receipt.search(params[:search]).page(params[:page]).order("created_at DESC")
+      @receipts = Receipt.where(published: true).search(params[:search]).page(params[:page]).order("created_at DESC")
     else
-      @receipts = Receipt.order("created_at DESC").page params[:page]
+      @receipts = Receipt.where(published: true).page(params[:page]).order("created_at DESC")
     end
   end
 

@@ -1,13 +1,7 @@
-%h2= t('.list_of_articles')
+.white-font
+  %h2= t('.list_of_articles')
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th
-      %th= t('.title')
-      %th= t('.text')
-
-  %tbody
+  %table.full-list
     - @articles.each do |article|
       - if article.published
         %tr

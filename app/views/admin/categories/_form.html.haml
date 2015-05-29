@@ -8,9 +8,8 @@
         %li= message
 
   .form-group
-    .col-lg-12
-      = f.input :name
+    = f.input :name
 
-  .col-lg-12
+  .actions
     = f.submit t('save'), class: "btn btn-default"
     = link_to t('back'), admin_categories_path, class: "btn btn-default"

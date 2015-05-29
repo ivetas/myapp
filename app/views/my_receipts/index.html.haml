@@ -5,7 +5,7 @@
         %h2= t('.main_title')
         = link_to t('.add_receipt'), new_receipt_path, class: "btn btn-default"
 
-      %table.my-receipt-list
+      %table.element-list
         - @my_receipts.each do |receipt|
           %tr
             %td= link_to (image_tag receipt.photo.url(:small)), receipt_path(receipt)

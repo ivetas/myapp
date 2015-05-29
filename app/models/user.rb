@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   validates :email, :username, presence: true, uniqueness: true
 
+  self.per_page = 10
+
   def ban
     self.is_banned = true
   end

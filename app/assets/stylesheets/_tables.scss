@@ -4,6 +4,7 @@ table {
   }
   tr, th {
     padding: 10px;
+    text-align: center;
   }
   tr, td {
     padding: 10px;
@@ -12,12 +13,17 @@ table {
   }
 }
 
-table.my-receipt-list {
+table.element-list {
   width: 100%;
   margin: 0;
+  tr {
+     th {
+    background-color: #F0F0F0;
+    }
+  }
 }
 
-table.all-receipt-list {
+table.full-list {
   width: 90%;
   margin-left: 40px;
 }

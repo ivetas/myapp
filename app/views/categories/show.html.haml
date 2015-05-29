@@ -13,7 +13,7 @@
           = submit_tag t('search'), :name => nil
 
     - if @receipts_category.any?
-      %table.all-receipt-list
+      %table.full-list
         - @receipts_category.each do |receipts_category|
           %tr
             %td
@@ -22,9 +22,7 @@
             %td= rating_for receipts_category, "vote", enable_half: true
 
     - else
-      %hr
-      %h3= t('.no_receipts')
-      %br
+      %h3.empty-message= t('.no_receipts')
 
     .box
       = will_paginate @receipts_category, renderer: BootstrapPagination::Rails

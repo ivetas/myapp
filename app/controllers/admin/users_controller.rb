@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::AdminController
   def index
-    @users = User.order("created_at desc").all
+    @users = User.page(params[:page]).order("created_at desc")
   end
 
   def ban

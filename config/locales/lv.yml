@@ -57,6 +57,7 @@ lv:
       vote: Vērtējums
       categories: Kategorijas
       search: Meklēt recepti
+      no_receipts: Netika atrasta neviena recepte
     show:
       components: Sastāvdaļas
       description: Pagatavošana

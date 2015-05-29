@@ -141,6 +141,18 @@ html, body {
     margin: 0 100px;
     padding-bottom: 15px;
   }
+  .all-categories {
+    margin: 0 100px;
+    padding-bottom: 15px;
+    .top-options {
+      h2 {
+        width: 80%;
+      }
+    }
+  }
+}
+.white-font.receipt-listing {
+  height: 100%;
 }
 
 .top-options {
@@ -153,4 +165,8 @@ html, body {
   .btn {
     margin-top: 10px;
   }
+}
+
+.empty-message {
+  text-align: center;
 }

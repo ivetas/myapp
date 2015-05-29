@@ -1,17 +1,13 @@
-%h2= t('.list_of_categories')
-.page-options
-  = link_to t('.add_category'), new_admin_category_path, class: "btn btn-default"
+.white-font
+  .all-categories
+    .top-options
+      %h2= t('.list_of_categories')
+      = link_to t('.add_category'), new_admin_category_path, class: "btn btn-default"
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th= t('.name')
-      %th
-      %th
-
-  %tbody
-    - @categories.each do |category|
-      %tr
-        %td= category.name
-        %td= link_to t('edit'), edit_admin_category_path(category), class: "btn btn-info"
-        %td= link_to t('destroy'), admin_category_path(category), method: :delete, class: "btn btn-danger", data: { confirm: t('are_you_sure') }
+  %table.full-list
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td= category.name
+          %td= link_to t('edit'), edit_admin_category_path(category), class: "btn btn-info"
+          %td= link_to t('destroy'), admin_category_path(category), method: :delete, class: "btn btn-danger", data: { confirm: t('are_you_sure') }
