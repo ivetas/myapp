@@ -44,6 +44,7 @@ feature "Receipt" do
     fill_in Receipt.human_attribute_name(:title), with: "Zemeņu gardums visiem"
     fill_in Receipt.human_attribute_name(:components), with: "1. Zemens 2. cukurs 3. piens"
     fill_in Receipt.human_attribute_name(:description), with: "1. Sagriez zemens 2. Pieber cukuru 3. Uzlej pienu"
+
     check Receipt.human_attribute_name(:published)
 
     click_button I18n.t('save')
@@ -63,6 +64,7 @@ feature "Receipt" do
     fill_in Receipt.human_attribute_name(:title), with: "Zemeņu gardums visiem"
     fill_in Receipt.human_attribute_name(:components), with: "1. Zemens 2. cukurs 3. piens"
     fill_in Receipt.human_attribute_name(:description), with: "1. Sagriez zemens 2. Pieber cukuru 3. Uzlej pienu"
+
     check category.name
 
     click_button I18n.t('save')
@@ -83,6 +85,28 @@ feature "Receipt" do
     fill_in Receipt.human_attribute_name(:title), with: "Zemeņu gardums ar putukrējumu"
     fill_in Receipt.human_attribute_name(:components), with: "1. Zemens 2. cukurs 3. piens 4. putukrējums"
     fill_in Receipt.human_attribute_name(:description), with: "1. Sagriez zemens 2. Pieber cukuru 3. Uzlej pienu 4. Pārspied putukrējumu pāri"
+
+    click_button I18n.t('save')
+
+    expect(page).to have_content I18n.t('receipts.update.notice')
+    expect(Receipt.last.title).to eq "Zemeņu gardums ar putukrējumu"
+    expect(Receipt.last.components).to eq "1. Zemens 2. cukurs 3. piens 4. putukrējums"
+    expect(Receipt.last.description).to eq "1. Sagriez zemens 2. Pieber cukuru 3. Uzlej pienu 4. Pārspied putukrējumu pāri"
+  end
+
+  it "User can edit his receipts and attach file to them" do
+    file_path = Rails.root.join('spec', 'files', 'saldejums.jpg')
+    click_link I18n.t('edit')
+
+    expect(page).to have_content I18n.t('my_receipts.edit.edit_receipt')
+    expect(page).to have_content Receipt.human_attribute_name(:published)
+
+    fill_in Receipt.human_attribute_name(:title), with: "Zemeņu gardums ar putukrējumu"
+    fill_in Receipt.human_attribute_name(:components), with: "1. Zemens 2. cukurs 3. piens 4. putukrējums"
+    fill_in Receipt.human_attribute_name(:description), with: "1. Sagriez zemens 2. Pieber cukuru 3. Uzlej pienu 4. Pārspied putukrējumu pāri"
+
+    attach_file("receipt_photo", file_path)
+
     click_button I18n.t('save')
 
     expect(page).to have_content I18n.t('receipts.update.notice')

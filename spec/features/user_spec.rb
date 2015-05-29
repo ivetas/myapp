@@ -24,6 +24,18 @@ feature "Authentification" do
     expect(page).to have_content I18n.t('devise.failure.invalid')
   end
 
+  it "User does not fill all required fields" do
+    visit new_user_session_path
+
+    fill_in 'user_email', :with => 'epasts2@epasts2.com'
+
+    click_button I18n.t('signin')
+
+    expect(page).to have_content I18n.t('devise.failure.not_found_in_database')
+    expect(page).to_not have_content I18n.t('exit')
+  end
+
+
   it "User successfully signs out" do
     login_as(user)
 
