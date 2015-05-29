@@ -1,17 +1,16 @@
-.row
-  %table
-    %tr
-      %td= t('.categories')
-      - @categories.each do |category|
-        %td= link_to category.name, category_path(category)
+.side
+  %h3= t('.categories')
+  - @categories.each do |category|
+    %p= link_to category.name, category_path(category)
 
-  = form_tag category_path(@category), method: "get", class: "navbar-form", id: "search-form"   do
-    .input-append
-      = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
-      = submit_tag t('search'), :name => nil
+.main
+  .main-top
+    %h2= @category.name
+    = form_tag category_path(@category), method: "get", class: "navbar-form", id: "search-form"   do
+      .input-append
+        = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
+        = submit_tag t('search'), :name => nil
 
-.row
-  %h2= @category.name
   - if @receipts_category.any?
     %table.table.table-striped
       %tr
