@@ -41,3 +41,12 @@ li.dropdown.open {
     width: 100px;
   }
 }
+
+.nav {
+  li {
+    a:focus {
+      border-radius: 25px;
+      background-color: #FF3399;
+    }
+  }
+}

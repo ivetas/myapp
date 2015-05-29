@@ -8,7 +8,7 @@ lv:
   register: Reģistrēties
   signin: Pieslēgties
   back: Atpakaļ
-  error: kļūda
+  error: Kļūda
   exit: Iziet
   save: Saglabāt
   ban: Nobanot
@@ -29,6 +29,7 @@ lv:
         password: Parole
         password_confirmation: Apstiprināt paroli
         remember_me: Atcerēties mani
+        current_password: Tagadējā parole
       article:
         title: Virsraksts
         description: Apraksts
@@ -145,6 +146,10 @@ lv:
         signed_up: ""
       user:
         signed_up: ""
+        updated: Izmaiņas veismīgi saglabātas
+      edit:
+        edit_profile: Labot profilu
+        hint: Ja nevēlaties mainīt paroli, tad atstājiet tukšu
 
   admin:
     users:

@@ -1,5 +1,4 @@
 table {
-  margin-left: 40px;
   tr {
     margin: 20px;
   }
@@ -10,11 +9,15 @@ table {
     padding: 10px;
     border-top: 2px solid #FF99CC;
     text-align: center;
-    vertical-align: center;
-
   }
 }
 
-.table {
+table.my-receipt-list {
+  width: 100%;
+  margin: 0;
+}
+
+table.all-receipt-list {
   width: 90%;
+  margin-left: 40px;
 }

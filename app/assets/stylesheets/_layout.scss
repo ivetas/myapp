@@ -23,11 +23,15 @@ html, body {
     }
   }
   .content {
+    background-color: #FFEBFA;
     border-radius: 0 0 25px 25px;
-    background-color: #FFF;
     display: inline-block;
     width: 995px;
-    height: 100%;
+    height: auto;
+    .rating {
+      background-color: white;
+      padding-bottom: 20px;
+    }
     .side {
       height: 100%;
       border-radius: 0 0 0 25px;
@@ -56,6 +60,8 @@ html, body {
 
     }
     .main {
+      border-radius: 0 0 25px 0;
+      background-color: #FFF;
       margin-left: 200px;
       width: auto;
     }
@@ -102,5 +108,49 @@ html, body {
 }
 
 .box {
+  text-align: center;
   padding: 20px;
+  clear: both;
+  position: relative;
+  margin-top: -3em;
+  .pagination.pagination {
+    li, a{
+      color: #FF3399;
+    }
+    li.active {
+      span {
+      background-color: #FF3399;
+      border-color: #FF3399;
+      }
+    }
+  }
+}
+
+.rating {
+  text-align: center;
+  table {
+    margin-left: 200px;
+  }
+}
+
+.white-font {
+  height: auto;
+  border-radius: 0 0 25px 25px;
+  background-color: white;
+  .my-receipts {
+    margin: 0 100px;
+    padding-bottom: 15px;
+  }
+}
+
+.top-options {
+  padding-bottom: 20px;
+  padding-top: 10px;
+  h2 {
+    float: left;
+    width: 83%;
+  }
+  .btn {
+    margin-top: 10px;
+  }
 }

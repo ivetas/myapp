@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature "Authentification" do
   let!(:user) { create :user }
+
   it "User successfully logs in" do
     visit new_user_session_path
 
@@ -35,6 +36,23 @@ feature "Authentification" do
     expect(page).to_not have_content I18n.t('exit')
   end
 
+  it "User can edit his profile(change email and/or password)" do
+    login_as(user)
+
+    visit home_index_path
+
+    click_link user.username
+
+    fill_in 'user_email', with: "jaunsepasts@epasts.com"
+    fill_in 'user_password', with: "jaunaparole"
+    fill_in 'user_password_confirmation', with: "jaunaparole"
+    fill_in 'user_current_password', with: "parole12"
+
+    click_button I18n.t('save')
+
+    expect(page).to have_content I18n.t('devise.registrations.user.updated')
+    expect(User.last.email).to eq "jaunsepasts@epasts.com"
+  end
 
   it "User successfully signs out" do
     login_as(user)

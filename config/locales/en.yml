@@ -29,6 +29,7 @@ en:
         password: Password
         password_confirmation: Confirm password
         remember_me: Remember me
+        current_password: Current password
       article:
         title: Title
         text: Description
@@ -134,7 +135,7 @@ en:
       new:
         new_user_hint: "Don't have you your own account?"
         register: "Register!"
-        forgot_password: "Frgot password?"
+        forgot_password: "Forgot password?"
         log_in: Sign in
     registrations:
       new:
@@ -142,6 +143,10 @@ en:
         signed_up: ""
       user:
         signed_up: ""
+        updated: Changes have been successfully saved
+      edit:
+        edit_profile: Edit profile
+        hint: Leave blank if you do not want to change your password
 
   admin:
     users:
