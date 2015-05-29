@@ -17,13 +17,21 @@
 h2.middle {
   text-align: center;
 }
-.center_form {
+.center-form {
   border: 3px solid #FF99CC;
   border-radius: 25px;
   background-color: #FFEBFA;
   margin: 10px 300px 30px 300px;
   padding: 10px;
   color: #333333;
+}
+
+.input-form {
+  border: 3px solid #FF99CC;
+  background-color: #FFEBFA;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px 150px 30px 150px;
 }
 
 .form-actions {

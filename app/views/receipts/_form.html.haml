@@ -1,4 +1,4 @@
-= simple_form_for(@receipt) do |f|
+= simple_form_for @receipt, html: { class: "input-form" } do |f|
   - if @receipt.errors.any?
     .error_explanation
       %h2= pluralize(@receipt.errors.count, t('error'))
@@ -8,19 +8,16 @@
         %li= message
 
   .form-group
-    .col-lg-10
-      = f.input :title
-      = f.input :components
-      = f.input :description
-      = f.file_field :photo
-      = f.input :published, as: :boolean
+    = f.input :title
+    = f.input :components
+    = f.input :description
+    = f.file_field :photo
+    = f.input :published, as: :boolean
 
   .form-group
-    .col-lg-6
-      = f.label :category_id
-      = f.collection_check_boxes :category_ids, Category.all, :id, :name
+    = f.label :category_id
+    = f.collection_check_boxes :category_ids, Category.all, :id, :name
 
-  .form-group
-    .col-lg-12
-      = f.submit t('save'), class: "btn btn-default"
-      = link_to t('back'), my_receipts_path, class: "btn btn-default"
+  .form-actions
+    = f.submit t('save'), class: "btn btn-default"
+    = link_to t('back'), my_receipts_path, class: "btn btn-default"
