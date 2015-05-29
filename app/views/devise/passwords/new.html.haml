@@ -1,10 +1,11 @@
-%h2.middle= t('.forgot_password')
+.white-font.input
+  %h2.middle= t('.forgot_password')
 
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "center_form" }) do |f|
-  = devise_error_messages!
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "center-form" }) do |f|
+    = devise_error_messages!
 
-  .form-group
-    = f.input :email
+    .form-group
+      = f.input :email
 
-  .form-actions
-    = f.submit t('.send_instructions'), class: "btn btn-default"
+    .form-actions
+      = f.submit t('.send_instructions'), class: "btn btn-default"
