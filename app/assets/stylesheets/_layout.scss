@@ -86,7 +86,7 @@ html, body {
 }
 
 .main-top {
-  padding: 5px;
+  padding: 10px 10px 15px 10px;
   display: inline-block;
   width: 100%;
   h2 {
@@ -99,4 +99,8 @@ html, body {
     margin: 0;
     padding: 12px;
   }
+}
+
+.box {
+  padding: 20px;
 }

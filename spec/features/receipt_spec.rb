@@ -112,14 +112,4 @@ feature "Receipt" do
     expect(page).to have_content I18n.t('error')
     expect(Receipt.count).to eq 1
   end
-
-  it "Searching receipt by title" do
-    visit receipts_path
-
-    fill_in "search", with: "kar"
-
-    click_button I18n.t('search')
-
-    expect(page).to have_content receipt.title
-  end
 end

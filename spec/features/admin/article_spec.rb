@@ -54,7 +54,7 @@ feature "Articles" do
     expect(Article.count).to eq 0
   end
 
-  it "Creating article without filling name and text field field will show error" do
+  it "Creating article without filling title and text field field will show error" do
     click_link I18n.t('admin.articles.index.add_article')
 
     click_button I18n.t('save')

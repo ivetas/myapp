@@ -12,18 +12,14 @@
         = submit_tag t('search'), :name => nil
 
   - if @receipts_category.any?
-    %table.table.table-striped
-      %tr
-        %th
-        %th= t('.title')
-        %th= t('.vote')
-        %th
-        - @receipts_category.each do |receipts_category|
-          %tr
-            %td= link_to (image_tag receipts_category.photo.url(:small)), receipt_path(receipts_category)
-            %td= receipts_category.title
-            %td= rating_for receipts_category, "vote", enable_half: true
-            %td= link_to t("show"), receipt_path(receipts_category)
+    %table.table
+      - @receipts_category.each do |receipts_category|
+        %tr
+          %td
+            %p= receipts_category.title
+            %p= link_to (image_tag receipts_category.photo.url(:small)), receipt_path(receipts_category)
+          %td= rating_for receipts_category, "vote", enable_half: true
+          %td= link_to t("show"), receipt_path(receipts_category)
   - else
     %hr
     %h3= t('.no_receipts')

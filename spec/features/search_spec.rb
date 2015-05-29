@@ -28,7 +28,7 @@ feature "Search" do
     expect(page).to have_content receipt.title
   end
 
-  it "All users can search receipts in specific category" do
+  it "If search doesn't find any receipt it will show message" do
     click_link category.name
 
     fill_in "search", with: "karote"
