@@ -82,6 +82,7 @@ en:
       description: Description
       main_title: My receipt list
       vote: Rating
+      no_receipts: No receipts added
     new:
       new_receipt: New receipt
     edit:

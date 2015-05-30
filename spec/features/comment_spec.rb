@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "Comment" do
   let!(:other_user)     { create :other_user }
-  let!(:receipt)        { create :receipt }
+  let!(:receipt)        { create :receipt, user: other_user }
 
   before do
     login_as(other_user)

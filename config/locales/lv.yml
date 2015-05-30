@@ -83,6 +83,7 @@ lv:
       description: Apraksts
       main_title: Manu recepšu saraksts
       vote: Vērtējums
+      no_receipts: Nav pievienota neviena recepte
     new:
       new_receipt: Jauna recepte
     edit:

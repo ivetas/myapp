@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Receipts" do
   let!(:admin)      { create :user, :admin }
   let!(:other_user) { create :other_user }
-  let!(:receipt)    { create :receipt }
+  let!(:receipt)    { create :receipt, user: other_user }
 
   before do
     login_as(admin)
