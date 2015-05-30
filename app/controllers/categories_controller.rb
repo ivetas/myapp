@@ -1,8 +1,5 @@
 class CategoriesController < ApplicationController
   layout "home"
-  def index
-    @categories = Category.all
-  end
 
   def show
     @categories = Category.all

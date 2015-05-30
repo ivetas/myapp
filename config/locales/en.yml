@@ -49,6 +49,8 @@ en:
       article_edditing: News edditing
       users: Users
       categories: Categories
+      index:
+        alert: This acount has been banned
   receipts:
     index:
       add_receipt: Add receipt
@@ -142,6 +144,8 @@ en:
         register: "Register!"
         forgot_password: "Forgot password?"
         log_in: Sign in
+      create:
+        alert: This account has been banned
     registrations:
       new:
         sign_up: Register

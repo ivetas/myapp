@@ -23,6 +23,7 @@ class Receipt < ActiveRecord::Base
   def self.search(query)
     where("title ilike ?", "%#{query}%")
   end
+  
   scope :published, -> { where(published: true) }
 
   def receipt_published_at

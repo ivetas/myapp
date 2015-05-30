@@ -50,6 +50,8 @@ lv:
       users: Lietotāji
       categories: Kategorijas
       language: Valoda
+      index:
+        alert: Šis konts ir bloķēts
   receipts:
     index:
       add_receipt: Pievienot recepti
@@ -145,6 +147,8 @@ lv:
         register: "Reģistrējies!"
         forgot_password: "Aizmirsi paroli?"
         log_in: Pieslēgties
+      create:
+        alert: Šis konts ir bloķēts
     registrations:
       new:
         sign_up: Reģistrēties

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   layout :detect_layout
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :username, :password)}
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password) }
   end
 
   private
@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if resource.is_a?(User) && resource.is_banned?
       sign_out resource
-      flash[:alert] = "This account has been suspended for violation of our rules"
+      flash[:alert] = t('.alert')
       home_index_path
     else
       super
@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   def banned?
     if current_user.present? && current_user.is_banned?
       sign_out current_user
-      flash[:alert] = "This account has been suspended"
+      flash[:alert] = t('.alert')
       home_index_path
     end
   end
