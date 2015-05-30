@@ -36,6 +36,8 @@ en:
         published: Publish
       category:
         name: Name
+      comment:
+        message: Comment
 
   layouts:
     home:
@@ -173,6 +175,7 @@ en:
         published: Published
         publication_date: Published at
         add_article: Add article
+        picture: Picture
       new:
         new_article: New article
       edit:

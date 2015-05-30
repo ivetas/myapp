@@ -18,7 +18,6 @@ gem "paperclip", "~> 4.2"
 gem 'ratyrate'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem 'ckeditor'
 
 group :development do
   gem 'annotate'

@@ -18,7 +18,7 @@ table.element-list {
   margin: 0;
   tr {
      th {
-    background-color: #F0F0F0;
+    background-color: #FFEBFA;
     }
   }
 }
@@ -26,6 +26,11 @@ table.element-list {
 table.full-list {
   width: 90%;
   margin-left: 40px;
+  tr {
+     th {
+    background-color: #FFEBFA;
+    }
+  }
 }
 
 table.show-item {
@@ -36,4 +41,15 @@ table.show-item {
 table.show-comments {
   width: 100%;
   text-align: left;
+  tr, td {
+    text-align: left;
+    background-color: white;
+  }
+  tr {
+    td:first-child {
+    width: 25%;
+    text-align: center;
+    background-color: #FFEBFA;
+    }
+  }
 }

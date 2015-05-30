@@ -36,6 +36,8 @@ lv:
         published: Publicēt
       category:
         name: Nosaukums
+      comment:
+        message: Komentēt
 
   layouts:
     home:
@@ -176,6 +178,7 @@ lv:
         published: Publicēts
         publication_date: Publicēšanas datums
         add_article: Pievienot ziņu
+        picture: Bilde
       new:
         new_article: Jauna ziņa
       edit:

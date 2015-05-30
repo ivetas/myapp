@@ -3,5 +3,3 @@
 #= require bootstrap
 #= require jquery.raty
 #= require ratyrate
-#= require ckeditor/ckeditor
-#= require ckeditor/config

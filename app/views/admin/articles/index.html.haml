@@ -6,10 +6,12 @@
 
   %table.full-list
     %tr
-      %th
+      %th= t('.picture')
       %th= t('.title')
       %th= t('.published')
       %th= t('.publication_date')
+      %th
+      %th
     - @articles.each do |article|
       %tr
         %td= image_tag article.photo.url(:small)

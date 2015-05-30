@@ -14,7 +14,7 @@ class ReceiptsController < ApplicationController
   # GET /receipts/1
   def show
     @receipt = Receipt.find(params[:id])
-    @comments = @receipt.comments
+    @comments = @receipt.comments.page(params[:page])
   end
 
   # GET /receipts/new
