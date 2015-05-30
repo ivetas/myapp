@@ -9,7 +9,6 @@
   %body{ id: "#{controller_name}_#{action_name}".dasherize }
     .wrapper
       #top-logo
-
       .header
         %a.navbar-brand{ href: "/home" } ReceptesLV
         %ul.nav.navbar-nav
@@ -41,7 +40,6 @@
           - else
             %li= link_to t('register'), new_user_registration_path
             %li= link_to t('signin'), new_user_session_path
-
 
       .content
         .col-md-12.nopadding

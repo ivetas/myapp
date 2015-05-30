@@ -11,4 +11,3 @@ window.onload = ->
   if document.images
     chosenPic = Math.floor(Math.random() * numPics)
     header.style.background = 'url(' + pictures[chosenPic] + ')'
-  return
