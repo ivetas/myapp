@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
 
   validates :name, presence: true
 
+  # Recepšu meklēšana kategorijās
   def self.search(query)
     where("title ilike ?", "%#{query}%")
   end

@@ -1,9 +1,14 @@
 .white-font.input
+  / Receptes nosaukums un tās vērtējums
   %h2.middle
     = @receipt.title
     = rating_for @receipt, "vote", enable_half: true
+
+  / Receptes autors
   %h4.author
     = "#{t('.author')}: #{@receipt.user.username}"
+
+  / Receptes bilde un tās sastāvdaļas
   %table.show-item
     %tr
       %td
@@ -12,11 +17,13 @@
         .receipt-show
           %h4= t('.components')
           %p= @receipt.components
-
+          
+  / Receptes apraksts
   .receipt-show
     %h4= t('.description')
     %p= @receipt.description
 
+    / Visi receptei pievienotie komentāri
     .comment-list
       %h4= "#{t('.comments')} #{@receipt.comments.count}"
       %table.show-comments
@@ -31,6 +38,7 @@
         .box.comments
           = will_paginate @comments, renderer: BootstrapPagination::Rails
 
+    / Ja lietotājs ir pieslēdzies, tad tas var izveidot komentāru
     - if user_signed_in?
       = simple_form_for ([@receipt, @receipt.comments.build]), html: { class: "comment-form" } do |f|
         .form-group

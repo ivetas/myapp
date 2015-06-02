@@ -7,20 +7,24 @@
   .white-font
     .main-top
       %h2= @category.name
+
+      / Iespējams meklēt receptes iekš kategorijas
       = form_tag category_path(@category), method: "get", class: "navbar-form", id: "search-form"   do
         .input-append
           = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
           = submit_tag t('search'), :name => nil
 
+    / Redzams saraksts ar receptēm, kas pievienotas dotajai kategorijai
     - if @receipts_category.any?
       %table.full-list
-        - @receipts_category.each do |receipts_category|
+        - @receipts_category.each do |receipts|
           %tr
             %td
-              %p= receipts_category.title
-              %p= link_to (image_tag receipts_category.photo.url(:small)), receipt_path(receipts_category)
-            %td= rating_for receipts_category, "vote", enable_half: true
+              %p= receipts.title
+              %p= link_to (image_tag receipts.photo.url(:small)), receipt_path(receipts)
+            %td= rating_for receipts, "vote", enable_half: true
 
+    / Ziņojums par tukšu recepšu sarkstu
     - else
       %h3.empty-message= t('.no_receipts')
 

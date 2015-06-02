@@ -115,16 +115,16 @@ en:
   devise:
     failure:
       already_authenticated: "You are already signed in"
-      invalid: "Wrong email or password"
+      invalid: "Wrong e-mail or password"
       invalid_token: "Invalid token"
-      not_found_in_database: "Wrong email or password"
+      not_found_in_database: "Wrong e-mail or password"
       timeout: "Your session has ended."
       unauthenticated: "You must sign in to continue"
     mailer:
       reset_password_instructions:
         subject: "Instructions for new password"
     passwords:
-      send_instructions: "Shortly you will get instructions in your email on how to renew your password."
+      send_instructions: "Shortly you will get instructions in your e-mail on how to renew your password."
       send_paranoid_instructions: "If this e-mail adress exists, then link to renew password will be sent to it."
       updated: "Your password has been successfully changed. You are signed in."
       updated_not_active: "Your password has been successfully changed."

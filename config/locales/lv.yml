@@ -118,17 +118,17 @@ lv:
   devise:
     failure:
       already_authenticated: "Jūs jau esat ienācis"
-      invalid: "Nepareizs epasts vai parole"
+      invalid: "Nepareizs e-pasts vai parole"
       invalid_token: "Neapareizs autentifikācijas tokens"
-      not_found_in_database: "Nepareizs epasts vai parole"
+      not_found_in_database: "Nepareizs e-pasts vai parole"
       timeout: "Tava sesija ir beigusies. Ienāc vēlreiz, lai turpinātu."
       unauthenticated: "Tev ir jāienāk, lai turpinātu"
     mailer:
       reset_password_instructions:
         subject: "Paroles atjaunošanas instrukcijas"
     passwords:
-      send_instructions: "Pāris minūšu laikā Jūs saņemsiet instrukciju savā epastā kā atjaunot paroli."
-      send_paranoid_instructions: "Ja datubāzē eksistē šāda epasta adrese, tad uz to tiks nosūtīta saite paroles atjaunošanai."
+      send_instructions: "Pāris minūšu laikā Jūs saņemsiet instrukciju savā e-pastā kā atjaunot paroli"
+      send_paranoid_instructions: "Ja datubāzē eksistē šāda e-pasta adrese, tad uz to tiks nosūtīta saite paroles atjaunošanai."
       updated: "Jūsu parole ir veiksmīgi nomainīta. Jūs esat ienācis."
       updated_not_active: "Tava parole tikai veiksmīgi nomainīta."
       new:
@@ -170,11 +170,11 @@ lv:
         state: Statuss
         last_sign_in_at: Pēdējo reizi ienācis
       ban:
-        notice: 'Lietotājs izbanots'
-        alert: 'Lietotāju neizdevās izbanot'
+        notice: 'Lietotājs bloķēts'
+        alert: 'Lietotāju neizdevās bloķēt'
       unban:
-        notice: 'Lietotāja bans ir atcelts'
-        alert: 'Lietotāja banu neizdevās atcelt'
+        notice: 'Lietotājs ir atbloķēts'
+        alert: 'Lietotāju nezidevās atbloķēt'
     articles:
       index:
         list_of_articles: Ziņu saraksts

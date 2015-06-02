@@ -1,7 +1,10 @@
 class ReceiptsController < ApplicationController
   before_action :set_receipt, only: [:show, :edit, :update, :destroy]
   layout "home"
+
   # GET /receipts
+  # Redzamas visas kategorijas, publicētās receptes, sakārtotas pēc izveidošanas
+  # datuma. Recepšu meklēsana
   def index
     @categories = Category.all
     if params[:search]
@@ -12,8 +15,8 @@ class ReceiptsController < ApplicationController
   end
 
   # GET /receipts/1
+  # Redz receptes detaļas un tai pievienotos komentārus
   def show
-    @receipt = Receipt.find(params[:id])
     @comments = @receipt.comments.page(params[:page])
   end
 
@@ -27,6 +30,7 @@ class ReceiptsController < ApplicationController
   end
 
   # POST /receipts
+  # Jaunas receptes izveide.
   def create
     @receipt = Receipt.create(receipt_params.merge(user_id: current_user.id))
       if @receipt.save
@@ -37,6 +41,7 @@ class ReceiptsController < ApplicationController
   end
 
   # PATCH/PUT /receipts/1
+  # Receptes labošana
   def update
     @receipt = Receipt.find(params[:id])
     if @receipt.update(receipt_params)
@@ -47,18 +52,19 @@ class ReceiptsController < ApplicationController
   end
 
   # DELETE /receipts/1
+  # Receptes dzēšana
   def destroy
     @receipt.destroy
       redirect_to my_receipts_path, notice: t('.notice')
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Uzstāda recepti
     def set_receipt
       @receipt = Receipt.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Receptes parametri
     def receipt_params
       params.require(:receipt).permit(
         :title, :description, :user_id, :photo, :components,

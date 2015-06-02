@@ -7,7 +7,9 @@ class Admin::ReceiptsController < Admin::AdminController
       redirect_to receipts_path, notice: t('.notice')
   end
 
-  def set_receipt
-    @receipt = Receipt.find(params[:id])
-  end
+  private
+
+    def set_receipt
+      @receipt = Receipt.find(params[:id])
+    end
 end

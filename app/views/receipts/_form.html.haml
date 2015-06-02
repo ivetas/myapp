@@ -14,6 +14,7 @@
     = f.file_field :photo
     = f.input :published, as: :boolean
 
+  / Receptei var pievienot kategoriju
   .form-group
     = f.label :category_id
     = f.collection_check_boxes :category_ids, Category.all, :id, :name

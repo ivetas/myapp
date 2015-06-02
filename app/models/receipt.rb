@@ -9,8 +9,10 @@ class Receipt < ActiveRecord::Base
   validates :description, presence: true
   validates :title, presence: true, uniqueness: true
 
+  # Uzstāda recepšu skaitu vienā lapā
   self.per_page = 5
 
+  # receptei pievieno bildi ar uzstādījumiem
   has_attached_file :photo, :styles => { :small => "150x150>", :medium => "300x300>" },
                     :url  => "/assets/receipts/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/receipts/:id/:style/:basename.:extension"
@@ -18,14 +20,18 @@ class Receipt < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
 
+  # Uzstāda, ka recepte būs vērtējama ar dimensiju - vote
   ratyrate_rateable "vote"
 
+  # Meklē receptes pēc title
   def self.search(query)
     where("title ilike ?", "%#{query}%")
   end
-  
+
   scope :published, -> { where(published: true) }
 
+  # Pirms saglabāšanas, ja recepte ir atzīmēta ar public, uzstādā tās
+  # publicēšanas laiku
   def receipt_published_at
     self.published_at = self.published? ? Time.now : nil
   end
