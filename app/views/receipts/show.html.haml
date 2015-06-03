@@ -17,7 +17,7 @@
         .receipt-show
           %h4= t('.components')
           %p= @receipt.components
-          
+
   / Receptes apraksts
   .receipt-show
     %h4= t('.description')
@@ -26,6 +26,7 @@
     / Visi receptei pievienotie komentāri
     .comment-list
       %h4= "#{t('.comments')} #{@receipt.comments.count}"
+      / Visi iesūtītie komentāri par recepti
       %table.show-comments
         - @comments.each do |comment|
           %tr
@@ -40,6 +41,7 @@
 
     / Ja lietotājs ir pieslēdzies, tad tas var izveidot komentāru
     - if user_signed_in?
+      / Reģistrēts lietotājs var sniegt komentārus par recepti
       = simple_form_for ([@receipt, @receipt.comments.build]), html: { class: "comment-form" } do |f|
         .form-group
           = f.input :message

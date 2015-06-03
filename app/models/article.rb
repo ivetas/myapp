@@ -14,6 +14,7 @@ class Article < ActiveRecord::Base
 
   self.per_page = 5
 
+  # pievieno publicēšanas laiku
   def set_articles_publishing_time
     self.published_at = self.published? ? Time.now : nil
   end

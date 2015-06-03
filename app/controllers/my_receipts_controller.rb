@@ -1,6 +1,7 @@
 class MyReceiptsController < ApplicationController
   layout "home"
-  # GET /receipts
+  # GET /my_receipts
+# Lietotājam redzamas viņa pievienotās receptes
   def index
     if current_user.present?
       @my_receipts = Receipt.where(user_id: current_user.id).page(params[:page]).order("created_at DESC")

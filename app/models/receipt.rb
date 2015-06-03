@@ -23,15 +23,14 @@ class Receipt < ActiveRecord::Base
   # Uzstāda, ka recepte būs vērtējama ar dimensiju - vote
   ratyrate_rateable "vote"
 
-  # Meklē receptes pēc title
+  # Recepšu meklēšana visās publicētajās
   def self.search(query)
     where("title ilike ?", "%#{query}%")
   end
 
   scope :published, -> { where(published: true) }
 
-  # Pirms saglabāšanas, ja recepte ir atzīmēta ar public, uzstādā tās
-  # publicēšanas laiku
+  # pievieno receptes publicēšanas laiku
   def receipt_published_at
     self.published_at = self.published? ? Time.now : nil
   end

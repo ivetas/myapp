@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # Nosaka layout DEvise kontrolieriem
+  # Norāda devise kontrolieru layoutu
   def detect_layout
     if devise_controller?
       "home"
@@ -24,19 +24,19 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Uzstāda valodu
+  # Valodas uzstādīšana
   def set_locale
     I18n.locale = params[:locale] if params[:locale].present?
   end
 
-  # Uzstāda defaulto valodu
+  # defaultā valoda
   def default_url_options(options = {})
     {locale: I18n.locale}
   end
 
   protected
 
-  # Lietotājs ir nobloķēts un mēģina pieslēgties
+  # bloķēts lietotājs nevar pieslēgties
   def after_sign_in_path_for(resource)
     if resource.is_a?(User) && resource.is_banned?
       sign_out resource
@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Tiek izmests lietotājs, kas ir bijis pieslēdzies bloķēšanas brīdī
+  # bloķēts lietotājs tiek atslēgts no sistēmas, ja tas vēljoprojām ir pieslēdzies
   def banned?
     if current_user.present? && current_user.is_banned?
       sign_out current_user

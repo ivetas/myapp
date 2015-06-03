@@ -13,10 +13,12 @@ class User < ActiveRecord::Base
 
   self.per_page = 10
 
+  # izmaina lietotāja atribūta is_banned vērtību uz patiess
   def ban
     self.is_banned = true
   end
 
+  # izmaina lietotāja atribūta is_banned vērtību uz aplams
   def unban
     self.is_banned = false
   end

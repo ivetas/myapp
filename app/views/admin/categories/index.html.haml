@@ -4,6 +4,7 @@
       %h2= t('.list_of_categories')
       = link_to t('.add_category'), new_admin_category_path, class: "btn btn-default"
 
+  / Visu kategoriju attēlošana ar to iespējām
   %table.full-list
     %tbody
       - @categories.each do |category|

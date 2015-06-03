@@ -24,7 +24,7 @@
               %p= link_to (image_tag receipts.photo.url(:small)), receipt_path(receipts)
             %td= rating_for receipts, "vote", enable_half: true
 
-    / Ziņojums par tukšu recepšu sarkstu
+      / Ziņojums par tukšu recepšu sarkstu
     - else
       %h3.empty-message= t('.no_receipts')
 

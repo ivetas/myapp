@@ -1,6 +1,7 @@
 .content.rating
   %h2= t('.top_receipts')
 
+  / Attēlots recepšu tops
   - if @rate.any?
     %table
       - @rate.each do |rate|

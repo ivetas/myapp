@@ -3,6 +3,7 @@ class Admin::AdminController < ApplicationController
   layout "home"
   private
   
+    #nepieciešams admina loma lietotājam, lai tas varētu veikt ar admin controller saistītās darbības
     def admin_required
       unless current_user.is_admin == true
         redirect_to  new_user_session_path

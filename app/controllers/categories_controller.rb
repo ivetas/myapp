@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   layout "home"
 
+  #   GET categories/1
   def show
     @categories = Category.all
     @category = Category.find(params[:id])

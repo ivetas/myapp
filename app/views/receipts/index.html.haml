@@ -7,12 +7,14 @@
   .white-font
     .main-top
       %h2= t('.main_title')
+      / Recepšu meklēšana pēc nosaukuma
       = form_tag receipts_path, method: "get", class: "navbar-form", id: "search-form"   do
         .input-append
           = text_field_tag :search, params[:search], class: "span2", placeholder: t('.search')
           = submit_tag t('search'), name: nil, class: "btn btn-default btn-sm"
 
     - if @receipts.any?
+      /Attēlots saraksts ar visām publicētajām receptēm
       %table.full-list
         - @receipts.each do |receipt|
           %tr
